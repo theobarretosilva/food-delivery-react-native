@@ -4,6 +4,8 @@ import { StatusBar } from "expo-status-bar";
 import * as Icon from 'react-native-feather';
 import React from "react";
 import Categories from "../components/categories";
+import { featured } from "../constants";
+import FeaturedRow from "../components/featuredRow";
 
 export default function HomeScreen() {
     return(
@@ -25,6 +27,20 @@ export default function HomeScreen() {
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 20}}>
                 <Categories />
+                <View style={{marginTop: 6}}>
+                    {
+                        [featured, featured, featured].map((item, index) => {
+                            return(
+                                <FeaturedRow
+                                    key={index}
+                                    title={item.title}
+                                    restaurants={item.restaurants}
+                                    description={item.description}
+                                />
+                            )
+                        })
+                    }
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
