@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { themeColors } from '../theme'
-import RestaurantCard from "./restaurantCard";
+import RestaurantCard from "./restaurantCard/restaurantCard";
 
 export default function FeaturedRow({title, description, restaurants}) {
     return(
