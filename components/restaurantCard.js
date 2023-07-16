@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import * as Icon from 'react-native-feather';
+import { themeColors } from "../theme";
 
 export default function RestaurantCard({item}) {
     return(
@@ -33,7 +34,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 24,
         elevation: 8,
-        boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
+        boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        shadowColor: themeColors.bgColor(0.2),
+        shadowRadius: 7
     },
     img: {
         height: 130,
