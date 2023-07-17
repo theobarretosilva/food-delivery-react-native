@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native";
-import { categories } from '../constants/index'
+import { categories } from '../../constants/index'
 import { useState } from "react";
+import { styles } from './categories.styles'
 
 export default function Categories() {
     const [activeCategory, setActiveCategory] = useState(null);
@@ -23,42 +24,3 @@ export default function Categories() {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    mainView: {
-        marginTop: 14,
-    },
-    scroll: {
-        overflow: "visible"
-    },
-    scrollContentContainer: {
-        paddingHorizontal: 17
-    },
-    viewCategory: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginRight: 27
-    },
-    imgCategory: {
-        width: 45,
-        height: 45,
-    },
-    btnOn: {
-        backgroundColor: '#757575',
-        padding: 1,
-        borderRadius: 25,
-    },
-    btnOff: {
-        padding: 1,
-        borderRadius: 25,
-        backgroundColor: '#d6d6d6'
-    },
-    textOn: {
-        fontWeight: '600',
-        color: '#424242',
-    },
-    textOff: {
-        color: '#9E9E9E',
-    }
-})

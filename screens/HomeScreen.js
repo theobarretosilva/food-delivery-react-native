@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import * as Icon from 'react-native-feather';
 import React from "react";
-import Categories from "../components/categories";
+import Categories from "../components/categories/categories";
 import { featured } from "../constants";
 import FeaturedRow from "../components/featuredRow";
 
