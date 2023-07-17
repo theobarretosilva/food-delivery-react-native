@@ -1,8 +1,20 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import * as Icon from 'react-native-feather';
 import { styles } from './dishRow.styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, removeFromCart, selectCartItems, selectCartItemsById } from '../../slices/cartSlice'
 
 export default function DishRow({item}) {
+    const dispatch = useDispatch();
+    const totalItems = useSelector(state => selectCartItemsById(state, item.id));
+
+    const handleIncrease = () => {
+        dispatch(addToCart({...item}))
+    }
+
+    const handleDecrease = () => {
+        dispatch(removeFromCart({id: item.id}))
+    }
     return(
         <View style={styles.geralView}>
             <Image style={styles.imgItemMenu} source={item.image} />
@@ -14,13 +26,13 @@ export default function DishRow({item}) {
                 <View style={styles.viewPrice}>
                     <Text style={styles.itemPrice}>${item.price}</Text>
                     <View style={styles.viewAdd}>
-                        <TouchableOpacity style={styles.touchableAdd}>
+                        <TouchableOpacity style={styles.touchableAdd} onPress={handleDecrease} disabled={!totalItems.length} >
                             <Icon.Minus strokeWidth={2} height={20} width={20} stroke={'white'} />
                         </TouchableOpacity>
                         <Text style={styles.qntdItem}>
-                            {2}
+                            {totalItems.length}
                         </Text>
-                        <TouchableOpacity style={styles.touchableAdd}>
+                        <TouchableOpacity style={styles.touchableAdd} onPress={handleIncrease} >
                             <Icon.Plus strokeWidth={2} height={20} width={20} stroke={'white'} />
                         </TouchableOpacity>
                     </View>
