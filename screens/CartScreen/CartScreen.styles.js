@@ -120,11 +120,31 @@ export const styles = StyleSheet.create({
         borderTopLeftRadius: 24,
         borderTopRightRadius: 24,
         backgroundColor: themeColors.bgColor(0.2),
-        bottom: 0
+        bottom: 0,
+        gap: 11
     },
-    innerViewTotal: {
+    innerViewsTotal: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between"
+    },
+    txtsTotals: {
+        color: '#374151'
+    },
+    txtOrderTotal: {
+        color: '#374151',
+        fontWeight: 800
+    },
+    touchPlaceOrder: {
+        backgroundColor: themeColors.bgColor(1),
+        padding: 9,
+        borderRadius: 9999
+    },
+    txtPlaceOrder: {
+        color: '#FFFFFF',
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 18,
+        lineHeight: 28
     }
 })

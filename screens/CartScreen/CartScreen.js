@@ -44,9 +44,22 @@ export default function CartScreen() {
                 }
             </ScrollView>
             <View style={styles.geralViewTotal}>
-                <View style={styles.innerViewTotal}>
-                    <Text>Subtotal</Text>
-                    <Text>$20</Text>
+                <View style={styles.innerViewsTotal}>
+                    <Text style={styles.txtsTotals}>Subtotal</Text>
+                    <Text style={styles.txtsTotals}>$20</Text>
+                </View>
+                <View style={styles.innerViewsTotal}>
+                    <Text style={styles.txtsTotals}>Delivery Fee</Text>
+                    <Text style={styles.txtsTotals}>$2</Text>
+                </View>
+                <View style={styles.innerViewsTotal}>
+                    <Text style={styles.txtOrderTotal}>Order Total</Text>
+                    <Text style={styles.txtOrderTotal}>$30</Text>
+                </View>
+                <View>
+                    <TouchableOpacity style={styles.touchPlaceOrder} onPress={() => navigation.navigate('OrderPreparing')}>
+                        <Text style={styles.txtPlaceOrder}>Place Order</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
