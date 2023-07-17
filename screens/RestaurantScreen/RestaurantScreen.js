@@ -1,9 +1,10 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation, useRoute } from '@react-navigation/native'
 import * as Icon from 'react-native-feather';
-import { themeColors } from "../../../theme";
-import DishRow from "../../../components/dishRow";
+import { themeColors } from "../../theme";
+import DishRow from "../../components/dishRow/dishRow";
 import { styles } from './RestaurantScreen.styles'
+import CartIcon from "../../components/cartIcon/cartIcon";
 
 export default function RestaurantScreen() {
     const {params} = useRoute();
@@ -12,6 +13,8 @@ export default function RestaurantScreen() {
     // console.log('Restaurant: ', item)
     return(
         <View>
+            <CartIcon />
+            <StatusBar barStyle="light-content" />
             <ScrollView>
                 <View style={styles.geralView}>
                     <Image style={styles.itemImage} source={item.image}/>

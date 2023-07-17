@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { themeColors } from "../../../theme";
+import { themeColors } from "../../theme";
 
 export const styles = StyleSheet.create({
     geralView: {
@@ -9,7 +9,11 @@ export const styles = StyleSheet.create({
         backgroundColor: "#FFFFFF",
         padding: 12,
         borderRadius: 24,
-        boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+        elevation: 8,
+        shadowColor: 'rgba(0, 0, 0, 0.75)',
+        shadowOffset: { width: 0, height: 25 },
+        shadowOpacity: 1,
+        shadowRadius: 50,
         marginBottom: 12,
         marginLeft: 8,
         marginRight: 8

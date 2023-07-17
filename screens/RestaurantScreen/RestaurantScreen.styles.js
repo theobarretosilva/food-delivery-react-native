@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     geralView: {
         position: "relative"
     },
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 40,
         backgroundColor: "#FFFFFF",
         marginTop: -48,
-        paddingTop: 30,
+        paddingTop: 25,
     },
     innerDscrpt: {
         paddingLeft: 12,
