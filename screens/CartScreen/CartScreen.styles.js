@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderTopLeftRadius: 14,
         borderTopRightRadius: 14,
-        marginTop: 25
+        marginTop: 30,
+        flex: 1
     },
     viewBackBtn: {
         position: "relative",
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
         shadowColor: 'rgba(0, 0, 0, 0.05)',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 1,
-        shadowRadius: 2,
+        shadowRadius: 2
     },
     touchable: {
         backgroundColor: themeColors.bgColor(1),
@@ -57,7 +58,7 @@ export const styles = StyleSheet.create({
     imgBike: {
         width: 80,
         height: 80,
-        borderRadius: 9999,
+        borderRadius: 9999
     },
     txtDeliver: {
         paddingLeft: 16,
@@ -114,6 +115,16 @@ export const styles = StyleSheet.create({
     },
     geralViewTotal: {
         padding: 24,
-        
+        paddingLeft: 32,
+        paddingRight: 32,
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        backgroundColor: themeColors.bgColor(0.2),
+        bottom: 0
+    },
+    innerViewTotal: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between"
     }
 })

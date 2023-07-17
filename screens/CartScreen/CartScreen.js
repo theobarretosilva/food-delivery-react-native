@@ -44,7 +44,10 @@ export default function CartScreen() {
                 }
             </ScrollView>
             <View style={styles.geralViewTotal}>
-
+                <View style={styles.innerViewTotal}>
+                    <Text>Subtotal</Text>
+                    <Text>$20</Text>
+                </View>
             </View>
         </View>
     )
