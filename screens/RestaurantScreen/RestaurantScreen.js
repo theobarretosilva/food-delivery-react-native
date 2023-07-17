@@ -5,12 +5,21 @@ import { themeColors } from "../../theme";
 import DishRow from "../../components/dishRow/dishRow";
 import { styles } from './RestaurantScreen.styles'
 import CartIcon from "../../components/cartIcon/cartIcon";
+import { useEffect } from "react";
+import { useDispatch } from 'react-redux'
+import { setRestaurant } from '../../slices/restaurantSlice'
 
 export default function RestaurantScreen() {
     const {params} = useRoute();
     const navigation = useNavigation();
     let item = params;
+    const dispatch = useDispatch();
     // console.log('Restaurant: ', item)
+    useEffect(() => {
+        if(item && item.id){
+            dispatch(setRestaurant({...item}))
+        }
+    },[])
     return(
         <View>
             <CartIcon />

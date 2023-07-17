@@ -1,11 +1,12 @@
 import { Image, ScrollView, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./CartScreen.styles";
-import { featured } from '../../constants/index'
 import * as Icon from 'react-native-feather';
 import { useNavigation } from '@react-navigation/native'
+import { useSelector } from 'react-redux'
+import { selectRestaurant } from '../../slices/restaurantSlice'
 
 export default function CartScreen() {
-    const restaurant = featured.restaurants[0];
+    const restaurant = useSelector(selectRestaurant);
     const navigation = useNavigation();
     return(
         <View style={styles.geralView}>
