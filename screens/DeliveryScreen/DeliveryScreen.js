@@ -4,18 +4,26 @@ import MapView, { Marker } from 'react-native-maps'
 import { themeColors } from "../../theme";
 import { styles } from './DeliveryScreen.styles'
 import * as Icon from 'react-native-feather';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectRestaurant } from '../../slices/restaurantSlice'
+import { emptyCart } from '../../slices/cartSlice'
 
 export default function DeliveryScreen() {
     const restaurant = useSelector(selectRestaurant);
     const navigation = useNavigation();
+    const dispatch = useDispatch();
+
+    const cancelOrder = () => {
+        navigation.navigate('Home');
+        dispatch(emptyCart())
+    }
+
     return(
         <View style={{flex: 1}}>
             <MapView 
                 initialRegion={{
-                    latitude: restaurants.lat,
-                    longitude: restaurants.lng,
+                    latitude: restaurant.lat,
+                    longitude: restaurant.lng,
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01
                 }}
@@ -24,11 +32,11 @@ export default function DeliveryScreen() {
             >
                 <Marker 
                     coordinate={{
-                        latitude: restaurants.lat,
-                        longitude: restaurants.lng,
+                        latitude: restaurant.lat,
+                        longitude: restaurant.lng,
                     }}
-                    title={restaurants.name}
-                    description={restaurants.description}
+                    title={restaurant.name}
+                    description={restaurant.description}
                     pinColor={themeColors.bgColor(1)}
                 />
             </MapView>
@@ -53,7 +61,7 @@ export default function DeliveryScreen() {
                         <TouchableOpacity style={styles.touchsBtns}>
                             <Icon.Phone fill={themeColors.bgColor(1)} stroke={themeColors.bgColor(1)} strokeWidth={1} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.touchsBtns} onPress={() => navigation.navigate('Home')}>
+                        <TouchableOpacity style={styles.touchsBtns} onPress={cancelOrder}>
                             <Icon.X stroke={'red'} strokeWidth={4} />
                         </TouchableOpacity>
                     </View>
