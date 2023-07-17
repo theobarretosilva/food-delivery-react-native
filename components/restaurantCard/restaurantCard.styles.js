@@ -3,25 +3,23 @@ import { themeColors } from "../../theme";
 
 export const styles = StyleSheet.create({
     geralView: {
-        marginRight: 20,
+        marginRight: 24,
         backgroundColor: '#FFFFFF',
         borderRadius: 24,
         elevation: 8,
-        boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-        shadowColor: themeColors.bgColor(0.2),
-        shadowRadius: 7
+        marginBottom: 15
     },
     img: {
-        height: 130,
-        width: 240,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+        height: 144,
+        width: 256,
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
     },
     innerView: {
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingBottom: 11,
-        marginTop: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        paddingBottom: 16,
+        marginTop: 8,
     },
     rstName: {
       fontSize: 18,

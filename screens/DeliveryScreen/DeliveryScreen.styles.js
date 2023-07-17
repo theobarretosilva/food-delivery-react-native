@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { themeColors } from "../../theme";
 
 export const styles = StyleSheet.create({
     geralViewBtm: {
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
         paddingTop: 40
     },
     txtEstArr: {
-        fontSize: 18,
+        fontSize: 20,
         lineHeight: 28,
         color: '#374151',
         fontWeight: 600
@@ -36,5 +37,55 @@ export const styles = StyleSheet.create({
     imgBikeGuy2: {
         width: 96,
         height: 96
+    },
+    viewDeliverGuy: {
+        backgroundColor: themeColors.bgColor(0.8),
+        padding: 8,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        borderRadius: 9999,
+        marginTop: 20,
+        marginBottom: 20,
+        marginLeft: 8,
+        marginRight: 8,
+    },
+    innerViewDelGuy: {
+        padding: 4,
+        borderRadius: 9999,
+        backgroundColor: 'rgba(255, 255, 255, 0.4)'
+    },
+    imgDelGuy: {
+        height: 64,
+        width: 64,
+        borderRadius: 9999
+    },
+    viewDataRider: {
+        flex: 1,
+        marginLeft: 12
+    },
+    txtRiderName: {
+        fontSize: 18,
+        lineHeight: 28,
+        fontWeight: "bold",
+        color: '#FFFFFF'
+    },
+    txtUrRider: {
+        fontWeight: 600,
+        color: '#FFFFFF'
+    },
+    geralViewTouchable: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        marginLeft: 12,
+        marginRight: 12,
+        gap: 15
+    },
+    touchsBtns: {
+        backgroundColor: '#FFFFFF',
+        padding: 8,
+        borderRadius: 9999
     }
 })
