@@ -3,7 +3,10 @@ import { themeColors } from "../../theme";
 
 export const styles = StyleSheet.create({
     geralView: {
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
+        borderTopLeftRadius: 14,
+        borderTopRightRadius: 14,
+        marginTop: 25
     },
     viewBackBtn: {
         position: "relative",
@@ -30,7 +33,87 @@ export const styles = StyleSheet.create({
         marginBottom: 2,
         marginLeft: -1,
         marginRight: -1,
-        top: 20,
+        top: 16,
         left: 8
+    },
+    txtUrCart: {
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 20,
+        lineHeight: 28
+    },
+    rstrntName: {
+        textAlign: "center",
+        color: '#6B7280'
+    },
+    deliveryView: {
+        display: "flex",
+        flexDirection: "row",
+        paddingLeft: 16,
+        paddingRight: 16,
+        alignItems: "center",
+        backgroundColor: themeColors.bgColor(0.2)
+    },
+    imgBike: {
+        width: 80,
+        height: 80,
+        borderRadius: 9999,
+    },
+    txtDeliver: {
+        paddingLeft: 16,
+        flex: 1
+    },
+    txtChange: {
+        fontWeight: "bold",
+        color: themeColors.text
+    },
+    scrollDishes: {
+        backgroundColor: '#FFFFFF',
+        paddingTop: 20
+    },
+    geralViewDish: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        marginLeft: 12,
+        paddingTop: 8,
+        paddingBottom: 8,
+        paddingLeft: 16,
+        paddingRight: 16,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 24,
+        marginLeft: 8,
+        marginRight: 8,
+        marginBottom: 12,
+        elevation: 6,
+        gap: 12
+    },
+    qntdDish: {
+        fontWeight: "bold",
+        color: themeColors.text
+    },
+    imgDish: {
+        height: 56,
+        width: 56,
+        borderRadius: 9999
+    },
+    nameDish: {
+        flex: 1,
+        fontWeight: "bold",
+        color: '#374151'
+    },
+    priceDish: {
+        fontWeight: 600,
+        fontSize: 16,
+        lineHeight: 24
+    },
+    touchDish: {
+        padding: 4,
+        borderRadius: 9999,
+        backgroundColor: themeColors.bgColor(1)
+    },
+    geralViewTotal: {
+        padding: 24,
+        
     }
 })
