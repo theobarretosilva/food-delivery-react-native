@@ -2,7 +2,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import * as Icon from 'react-native-feather';
 import { styles } from './dishRow.styles'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, removeFromCart, selectCartItems, selectCartItemsById } from '../../slices/cartSlice'
+import { addToCart, removeFromCart, selectCartItemsById } from '../../slices/cartSlice'
 import { urlFor } from "../../sanity";
 
 export default function DishRow({item}) {

@@ -29,32 +29,34 @@ export const styles = StyleSheet.create({
     },
     innerViewItem: {
         paddingLeft: 12,
+        width: 260
     },
     itemName: {
-        fontSize: 20,
+        fontSize: 19,
         lineHeight: 28,
     },
     itemDescription: {
-        color: '#374151'
+        color: '#374151',
     },
     viewPrice: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
         alignItems: "center",
-        gap: 100,
-        paddingLeft: 12
+        justifyContent: "space-between",
+        paddingLeft: 12,
+        paddingRight: 12,
+        width: 260
     },
     itemPrice: {
         color: '#374151',
         fontSize: 18,
-        lineHeight: 28,
         fontWeight: "bold"
     },
     viewAdd: {
         display: "flex",
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        right: 0
     },
     touchableAdd: {
         padding: 4,
