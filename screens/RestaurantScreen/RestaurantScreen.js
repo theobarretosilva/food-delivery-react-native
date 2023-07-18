@@ -8,6 +8,7 @@ import CartIcon from "../../components/cartIcon/cartIcon";
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux'
 import { setRestaurant } from '../../slices/restaurantSlice'
+import { urlFor } from "../../sanity";
 
 export default function RestaurantScreen() {
     const {params} = useRoute();
@@ -16,7 +17,7 @@ export default function RestaurantScreen() {
     const dispatch = useDispatch();
     // console.log('Restaurant: ', item)
     useEffect(() => {
-        if(item && item.id){
+        if(item && item._id){
             dispatch(setRestaurant({...item}))
         }
     },[])
@@ -26,7 +27,7 @@ export default function RestaurantScreen() {
             <StatusBar barStyle="light-content" />
             <ScrollView>
                 <View style={styles.geralView}>
-                    <Image style={styles.itemImage} source={item.image}/>
+                    <Image style={styles.itemImage} source={{uri: urlFor(item.image).url()}}/>
                     <TouchableOpacity style={styles.touchable} onPress={() => navigation.goBack()}>
                         <Icon.ArrowLeft strokeWidth={3} stroke={themeColors.bgColor(1)} />
                     </TouchableOpacity>
@@ -40,7 +41,7 @@ export default function RestaurantScreen() {
                                 <Text style={styles.txtStar}>
                                     <Text style={styles.stars}>{item.stars} </Text>
                                     <Text style={styles.reviews}>
-                                        ({item.reviews} reviews) • <Text style={styles.category}>{item.category}</Text>
+                                        ({item.reviews} reviews) • <Text style={styles.category}>{item?.type?.name}</Text>
                                     </Text>
                                 </Text>
                             </View>

@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         marginTop: 14,
     },
     scroll: {
-        overflow: "visible"
+        overflow: "visible",
     },
     scrollContentContainer: {
         paddingHorizontal: 17
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginRight: 27
+        marginRight: 24
     },
     imgCategory: {
         width: 45,
@@ -22,12 +22,12 @@ export const styles = StyleSheet.create({
     },
     btnOn: {
         backgroundColor: '#757575',
-        padding: 1,
-        borderRadius: 25,
+        padding: 7,
+        borderRadius: 9999,
     },
     btnOff: {
-        padding: 1,
-        borderRadius: 25,
+        padding: 7,
+        borderRadius: 9999,
         backgroundColor: '#d6d6d6'
     },
     textOn: {

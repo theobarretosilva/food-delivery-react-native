@@ -2,13 +2,14 @@ import { Image, Text, TouchableWithoutFeedback, View } from "react-native";
 import * as Icon from 'react-native-feather';
 import { useNavigation } from "@react-navigation/native";
 import {styles} from './restaurantCard.styles'
+import { urlFor } from "../../sanity";
 
 export default function RestaurantCard({item}) {
     const navigation = useNavigation();
     return(
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Restaurant', {...item})}>
             <View style={styles.geralView}>
-                <Image style={styles.img} source={item.image} />
+                <Image style={styles.img} source={{uri: urlFor(item.image).url()}} />
                 <View style={styles.innerView}>
                     <Text style={styles.rstName}>{item.name}</Text>
                     <View style={styles.rstView}>
@@ -16,7 +17,7 @@ export default function RestaurantCard({item}) {
                         <Text style={styles.txtStar}>
                             <Text style={styles.stars}>{item.stars} </Text>
                             <Text style={styles.reviews}>
-                                ({item.reviews} reviews) • <Text style={styles.category}>{item.category}</Text>
+                                ({item.reviews} reviews) • <Text style={styles.category}>{item?.type?.name}</Text>
                             </Text>
                         </Text>
                     </View>

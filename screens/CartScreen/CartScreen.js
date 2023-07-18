@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectRestaurant } from '../../slices/restaurantSlice'
 import { removeFromCart, selectCartItems, selectCartTotal } from '../../slices/cartSlice'
 import { useEffect, useState } from "react";
+import { urlFor } from "../../sanity";
 
 export default function CartScreen() {
     const restaurant = useSelector(selectRestaurant);
@@ -18,10 +19,10 @@ export default function CartScreen() {
 
     useEffect(() => {
         const items = cartItems.reduce((group, item) => {
-            if(group[item.id]){
-                group[item.id].push(item);
+            if(group[item._id]){
+                group[item._id].push(item);
             }else{
-                group[item.id] = [item]
+                group[item._id] = [item]
             }
             return group;
         },{})
@@ -54,10 +55,10 @@ export default function CartScreen() {
                         return(
                             <View style={styles.geralViewDish} key={key}>
                                 <Text style={styles.qntdDish}>{items.length} x</Text>
-                                <Image style={styles.imgDish} source={dish.image} />
+                                <Image style={styles.imgDish} source={{uri: urlFor(dish.image).url()}} />
                                 <Text style={styles.nameDish}>{dish.name}</Text>
                                 <Text style={styles.priceDish}>${dish.price}</Text>
-                                <TouchableOpacity style={styles.touchDish} onPress={() => dispatch(removeFromCart({id: dish.id}))} >
+                                <TouchableOpacity style={styles.touchDish} onPress={() => dispatch(removeFromCart({id: dish._id}))} >
                                     <Icon.Minus strokeWidth={2} height={20} width={20} stroke="white" />
                                 </TouchableOpacity>
                             </View>
